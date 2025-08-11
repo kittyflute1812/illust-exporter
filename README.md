@@ -25,7 +25,7 @@ illust-exporter [path/to/your/psd_folder] [output_type_1] [output_type_2] ...
 ### Example
 
 ```bash
-illust-exporter /Users/hiranotomomi/Desktop/my_illustrations pixiv other
+illust-exporter /Users/(Username)/Desktop/my_illustrations pixiv other
 ```
 
 This command will create two new folders, `my_illustrations_pixiv` and `my_illustrations_other`, in the same directory as the source folder, with the converted images inside.
