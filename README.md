@@ -59,5 +59,5 @@ poetry run illust-exporter [path/to/your/psd_folder] [output_type_1] [output_typ
 To run the tests, execute the following command from the root of the project:
 
 ```bash
-poetry run python -m unittest discover tests
+poetry run pytest
 ```

@@ -11,6 +11,9 @@ python = ">=3.9, <3.13"
 Pillow = "*"
 psd-tools = "*"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+
 [tool.poetry.scripts]
 illust-exporter = "src.illust_exporter:main"
 
