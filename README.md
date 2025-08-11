@@ -30,10 +30,19 @@ illust-exporter /Users/(Username)/Desktop/my_illustrations pixiv other
 
 This command will create two new folders, `my_illustrations_pixiv` and `my_illustrations_other`, in the same directory as the source folder, with the converted images inside.
 
-## Testing
+## How to Develop
+### 仮想環境を有効化
+
+```bash
+source .venv/bin/activate 
+```
+
+
+### Testing
 
 To run the tests, execute the following command from the root of the project:
 
 ```bash
 python3 -m unittest discover tests
 ```
+
