@@ -1,25 +1,19 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "illust-exporter"
 version = "0.1.0"
-authors = [
-  { name="Your Name", email="you@example.com" },
-]
 description = "A tool to export illustrations for specific sites."
+authors = ["kittyflute1812 <kittyflute1812@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.8"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
-dependencies = [
-    "Pillow",
-    "psd-tools",
-]
+packages = [{include = "src"}]
 
-[project.scripts]
+[tool.poetry.dependencies]
+python = ">=3.9, <3.13"
+Pillow = "*"
+psd-tools = "*"
+
+[tool.poetry.scripts]
 illust-exporter = "src.illust_exporter:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

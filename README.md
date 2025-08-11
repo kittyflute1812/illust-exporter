@@ -10,39 +10,54 @@
     cd illust-exporter
     ```
 
-2.  Install the project in editable mode:
+2.  Install the project dependencies using Poetry:
 
     ```bash
-    pip install -e .
+    poetry install
     ```
 
-## Usage
+## Usage (after installation)
+
+After installation, you can use the command-line tool.
 
 ```bash
-illust-exporter [path/to/your/psd_folder] [output_type_1] [output_type_2] ...
+poetry run illust-exporter [path/to/your/psd_folder] [output_type_1] [output_type_2] ...
 ```
 
 ### Example
 
 ```bash
-illust-exporter /Users/(Username)/Desktop/my_illustrations pixiv other
+poetry run illust-exporter /Users/(Username)/Desktop/my_illustrations pixiv other
 ```
 
 This command will create two new folders, `my_illustrations_pixiv` and `my_illustrations_other`, in the same directory as the source folder, with the converted images inside.
 
-## How to Develop
-### 仮想環境を有効化
+## Development
+
+For local development, you can run the script directly.
 
 ```bash
-source .venv/bin/activate 
+poetry run illust-exporter [path/to/your/psd_folder] [output_type_1] [output_type_2] ...
 ```
 
+## Building and Distributing
 
-### Testing
+1.  Build the package:
+
+    ```bash
+    poetry build
+    ```
+
+2.  Publish to PyPI:
+
+    ```bash
+    poetry publish
+    ```
+
+## Testing
 
 To run the tests, execute the following command from the root of the project:
 
 ```bash
-python3 -m unittest discover tests
+poetry run python -m unittest discover tests
 ```
-

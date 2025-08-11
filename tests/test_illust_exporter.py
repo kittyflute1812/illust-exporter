@@ -5,13 +5,7 @@ import sys
 from unittest.mock import patch
 from PIL import Image
 
-# Add src directory to sys.path
-sys.path.insert(
-    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src"))
-)
-
 import illust_exporter as illust_exporter
-
 
 class TestIllustExporter(unittest.TestCase):
     def setUp(self):
