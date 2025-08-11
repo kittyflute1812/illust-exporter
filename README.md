@@ -10,30 +10,30 @@
     cd illust-exporter
     ```
 
-2.  Install the required libraries:
+2.  Install the project in editable mode:
 
     ```bash
-    pip install -r requirements.txt
+    pip install -e .
     ```
 
 ## Usage
 
 ```bash
-python illust_exporter.py [path/to/your/psd_folder] [output_type_1] [output_type_2] ...
+illust-exporter [path/to/your/psd_folder] [output_type_1] [output_type_2] ...
 ```
 
 ### Example
 
 ```bash
-python illust_exporter.py /Users/hiranotomomi/Desktop/my_illustrations pixiv other
+illust-exporter /Users/hiranotomomi/Desktop/my_illustrations pixiv other
 ```
 
 This command will create two new folders, `my_illustrations_pixiv` and `my_illustrations_other`, in the same directory as the source folder, with the converted images inside.
 
 ## Testing
 
-To run the tests, execute the following command:
+To run the tests, execute the following command from the root of the project:
 
 ```bash
-python3 test_illust_exporter.py
+python3 -m unittest discover tests
 ```
