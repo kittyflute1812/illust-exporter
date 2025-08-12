@@ -1,58 +1,60 @@
 # illust-exporter
 イラストを特定サイト用に書き出すツールです
 
-## Installation
 
-1.  Clone the repository:
+## Usage
 
-    ```bash
-    git clone https://github.com/your-username/illust-exporter.git
-    cd illust-exporter
-    ```
-
-2.  Install the project dependencies using Poetry:
-
-    ```bash
-    poetry install
-    ```
-
-## Usage (after installation)
-
-After installation, you can use the command-line tool.
+First, install the tool using `pipx`:
 
 ```bash
-poetry run illust-exporter [path/to/your/psd_folder] [output_type_1] [output_type_2] ...
+pipx install git+https://github.com/kittyflute1812/illust-exporter.git
 ```
 
-### Example
+Then, you can use the `illust-exporter` command:
 
 ```bash
-poetry run illust-exporter /Users/(Username)/Desktop/my_illustrations pixiv other
+illust-exporter [folder_path] [output_type_1] [output_type_2] ...
 ```
 
-This command will create two new folders, `my_illustrations_pixiv` and `my_illustrations_other`, in the same directory as the source folder, with the converted images inside.
+**Arguments:**
+
+*   `folder_path`: The path to the folder containing your PSD files.
+*   `output_types`: One or more output types to convert the images to. The available types are defined in `src/config.json`. Currently, you can use `pixiv` and `other`.
+
+**Example:**
+
+Let's say you have a folder named `my_art` on your Desktop containing your PSD files.
+
+```
+/Users/your_user/Desktop/my_art/
+├───image1.psd
+└───image2.psd
+```
+
+To convert these images for both `pixiv` and `other` types, you would run:
+
+```bash
+illust-exporter /Users/your_user/Desktop/my_art pixiv other
+```
+
+This will create two new folders on your Desktop:
+
+*   `/Users/your_user/Desktop/my_art_pixiv`
+*   `/Users/your_user/Desktop/my_art_other`
+
+These new folders will contain the images from `my_art` converted to JPEG, with file sizes optimized for each output type. The original PSD files will be removed from the new folders.
 
 ## Development
 
 For local development, you can run the script directly.
 
 ```bash
+# installation
+poetry install
+
+# execution
 poetry run illust-exporter [path/to/your/psd_folder] [output_type_1] [output_type_2] ...
 ```
-
-## Building and Distributing
-
-1.  Build the package:
-
-    ```bash
-    poetry build
-    ```
-
-2.  Publish to PyPI:
-
-    ```bash
-    poetry publish
-    ```
 
 ## Testing
 
